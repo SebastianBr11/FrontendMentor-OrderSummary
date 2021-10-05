@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap");
+
+:root {
+  --clr-prim1: hsl(225, 100%, 94%);
+  --clr-prim2: hsl(245, 75%, 52%);
+  --clr-prim2-sh: hsla(245, 75%, 52%, 0.2);
+  --clr-neut1: hsl(225, 100%, 98%);
+  --clr-neut2: hsl(224, 23%, 55%);
+  --clr-neut3: hsl(223, 47%, 23%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Red Hat Display", sans-serif;
+  display: grid;
+  place-content: center;
+  height: 100vh;
+  background-image: url("images/pattern-background-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-color: var(--clr-prim1);
+  padding: 0 16px;
+}
+
+@media (max-width: 400px) {
+  body {
+    background-image: url("images/pattern-background-mobile.svg");
+  }
+}
+
+.container {
+  max-width: 400px;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: white;
+  /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2), 0 15px 25px rgba(0, 0, 0, 0.1); */
+  box-shadow: 0 5px 15px hsla(245, 50%, 50%, 0.2),
+    0 15px 15px -5px hsla(245, 50%, 50%, 0.2);
+}
+
+.image img {
+  width: 100%;
+}
+
+.content {
+  padding: 2em 2em;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+}
+
+.content h1,
+p {
+  text-align: center;
+}
+
+.content h1 {
+  color: var(--clr-neut3);
+  font-weight: 900;
+  font-size: 1.5em;
+}
+
+.content p {
+  color: var(--clr-neut2);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.plan {
+  display: flex;
+  background-color: var(--clr-neut1);
+  padding: 1rem;
+  border-radius: 20px;
+  align-items: center;
+  font-size: 14px;
+}
+
+.plan .info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 16px;
+  gap: 5px;
+}
+
+.plan .info .title {
+  color: var(--clr-neut3);
+  font-weight: 790;
+}
+
+.plan .info .price {
+  color: var(--clr-neut2);
+}
+
+.plan a {
+  margin-left: auto;
+  color: var(--clr-prim2);
+}
+
+.plan a:hover,
+.plan a:focus {
+  text-decoration: none;
+  opacity: 0.85;
+}
+
+.content button {
+  font-size: 16px;
+  font-family: "Red Hat Display", sans-serif;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.content .primary {
+  background-color: var(--clr-prim2);
+  border: none;
+  color: var(--clr-neut1);
+  padding: 0.8em 0;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px 0 var(--clr-prim2-sh),
+    0 10px 15px 2px var(--clr-prim2-sh);
+  transition: opacity 100ms ease;
+}
+
+.content .primary:hover,
+.content .primary:focus {
+  opacity: 0.85;
+}
+
+.content .secondary {
+  border: none;
+  background-color: transparent;
+  color: var(--clr-neut2);
+  transition: color 100ms ease;
+}
+
+.content .secondary:hover,
+.content .secondary:focus {
+  color: black;
+}
